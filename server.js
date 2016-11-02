@@ -19,6 +19,7 @@ app.get('/:time', function(req, res) {
         });
     }
 
+    res.set({ 'Access-Control-Allow-Origin': '*' });
     res.send(output);
 });
 
