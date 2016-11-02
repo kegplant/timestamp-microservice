@@ -3,20 +3,15 @@ const app = express();
 
 app.get('/:time', function(req, res) {
     'use strict';
-    
-    let input = req.params.time;
-    if (/^(\+|-)?\d+/.test(input)) {
-        input = Number.parseInt(input, 10);
-    }
 
-    const date = new Date(input);
+    const date = new Date(/^(\+|-)?\d+$/.test(req.params.time) ? req.params.time * 1000 : req.params.time);
     const output = {
         unix: null,
         natural: null
     };
 
     if (!Number.isNaN(date.getTime())) {
-        output.unix = date.getTime();
+        output.unix = Math.floor(date.getTime() / 1000);
         output.natural = date.toLocaleString('en-US', {
             month: 'long',
             day: 'numeric',
