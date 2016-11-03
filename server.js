@@ -25,6 +25,6 @@ app.get('/:time', function(req, res) {
   res.send(output);
 });
 
-app.listen(8080, function() {
-  console.log('Live on port 8080!');
+app.listen(process.env.PORT || 8080, function() {
+  console.log('App is live!');
 });
