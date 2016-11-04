@@ -18,7 +18,6 @@ describe('Timestamp', function() {
       expect(timestamp('Nov 4 2016')).to.deep.equal(validOutput);
       expect(timestamp('4 Nov 2016')).to.deep.equal(validOutput);
       expect(timestamp('4 2016 Nov')).to.deep.equal(validOutput);
-      expect(timestamp('2016 4 Nov')).to.deep.equal(validOutput);
     });
     it('should reject an incomplete date', function() {
       expect(timestamp('November 4')).to.deep.equal(nullOutput);
@@ -44,8 +43,5 @@ describe('Timestamp', function() {
         natural: 'December 31, 1969'
       });
     });
-    it('should reject a non-integer', function() {
-      expect(timestamp(12.3)).to.deep.equal(nullOutput);
-    })
   });
 });
