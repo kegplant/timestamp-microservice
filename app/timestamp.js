@@ -12,7 +12,7 @@ module.exports = function(toParse) {
     'D MMM YYYY',
     'D YYYY MMMM',
     'D YYYY MMM'
-    ];
+  ];
   const date = moment(toParse, formats, true);
 
   if (date.isValid()) {
