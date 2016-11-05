@@ -1,15 +1,28 @@
 {
   "name": "timestamp",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Timestamp microservice project. Accepts a Unix time or natural date parameter and returns both, or null if the parameter is invalid.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
-  "author": "",
+  "author": "Kev Comedia",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
-  }
+    "express": "^4.14.0",
+    "moment": "^2.15.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevcomedia/timestamp-microservice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevcomedia/timestamp-microservice/issues"
+  },
+  "homepage": "https://github.com/kevcomedia/timestamp-microservice#readme"
 }
